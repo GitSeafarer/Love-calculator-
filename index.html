@@ -1,0 +1,83 @@
+Here's an enhanced version:
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Love Match Calculator</title>
+<style>
+body {
+background: linear-gradient(120deg, #ff69b4, #ffa07a);
+font-family: Arial, sans-serif;
+}
+
+.container {
+width: 300px;
+margin: 50px auto;
+padding: 20px;
+background-color: #fff;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"] {
+width: 100%;
+padding: 10px;
+margin-bottom: 20px;
+border: none;
+border-radius: 5px;
+}
+
+button {
+background-color: #ff69b4;
+color: #fff;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+
+button:hover {
+background-color: #ffa07a;
+}
+
+#result {
+font-size: 18px;
+font-weight: bold;
+margin-top: 20px;
+color: #ff69b4;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Love Match Calculator</h1>
+<input id="name1" placeholder="Your Name">
+<input id="name2" placeholder="Partner's Name">
+<button id="calculate-btn" onclick="calculateLove()">Calculate Love!</button>
+<p id="result"></p>
+</div>
+<script>
+function calculateLove() {
+var name1 = document.getElementById("name1").value;
+var name2 = document.getElementById("name2").value;
+if (name1 === "" || name2 === "") {
+document.getElementById("result").innerHTML = "Please enter both names!";
+} else {
+var loveScore = Math.floor(Math.random() * 100) + 1;
+var resultText = "";
+if (loveScore < 30) {
+resultText = "Not meant to be!";
+} else if (loveScore < 60) {
+resultText = "Friend zone!";
+} else if (loveScore < 80) {
+resultText = "Good match!";
+} else {
+resultText = "Soulmates!";
+}
+document.getElementById("result").innerHTML = name1 + " and " + name2 + "'s love score is " + loveScore + "%! " + resultText;
+}
+}
+</script>
+</body>
+</html>
